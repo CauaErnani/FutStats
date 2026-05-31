@@ -1,4 +1,4 @@
-FutStats API ⚽
+FutStats API
 
 > **Status do Projeto:** Em Desenvolvimento (Work in Progress)
 
