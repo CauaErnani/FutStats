@@ -2,7 +2,7 @@ FutStats API
 
 > **Status do Projeto:** Em Desenvolvimento (Work in Progress)
 
-O **FutStats** é uma API RESTful desenvolvida em C# e .NET 10 para o gerenciamento de campeonatos esportivos. O sistema permite o cadastro de times, o registro de partidas e processa dinamicamente a tabela de classificação do campeonato aplicando as regras de negócio oficiais do futebol.
+O **FutStats** é uma API RESTful desenvolvida em C# e .NET 8 para o gerenciamento de campeonatos esportivos. O sistema permite o cadastro de times, o registro de partidas e processa dinamicamente a tabela de classificação do campeonato aplicando as regras de negócio oficiais do futebol.
 
 ## Tecnologias e Arquitetura
 
