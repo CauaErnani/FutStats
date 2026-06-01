@@ -1,4 +1,5 @@
-﻿using FutStats.Data;
+﻿using FluentValidation;
+using FutStats.Data;
 using FutStats.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,10 +25,21 @@ namespace FutStats.Controllers
             return await _context.Partidas.ToListAsync();
         }
 
-        // ROTA POST: Cadastra uma nova partida
         [HttpPost]
-        public async Task<ActionResult<Partida>> PostPartida(Partida partida)
+        public async Task<ActionResult<Partida>> PostPartida(
+    Partida partida,
+    [FromServices] IValidator<Partida> validador) // Injetando o validador aqui
         {
+            // 1. Roda as regras de negócio
+            var resultadoValidacao = await validador.ValidateAsync(partida);
+
+            // 2. Se a validação falhar, barra a requisição e devolve os erros
+            if (!resultadoValidacao.IsValid)
+            {
+                return BadRequest(resultadoValidacao.Errors.Select(e => e.ErrorMessage));
+            }
+
+            // 3. Se passou, salva no banco normalmente
             _context.Partidas.Add(partida);
             await _context.SaveChangesAsync();
 
