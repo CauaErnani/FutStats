@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="FutStats.Tests/FutStats.Tests.csproj" Id="19222b6e-0f39-440c-ba81-31926320e353" />
   <Project Path="FutStats/FutStats.csproj" />
 </Solution>
